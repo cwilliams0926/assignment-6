@@ -38,6 +38,8 @@
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             deleteButton = new Button();
+            nameLabel = new Label();
+            phoneLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)personBindingSource).BeginInit();
             SuspendLayout();
@@ -81,7 +83,7 @@
             saveButton.Location = new Point(280, 380);
             saveButton.Name = "saveButton";
             saveButton.Size = new Size(75, 23);
-            saveButton.TabIndex = 1;
+            saveButton.TabIndex = 5;
             saveButton.Text = "&Save";
             saveButton.UseVisualStyleBackColor = true;
             saveButton.Click += saveButton_Click;
@@ -100,23 +102,43 @@
             textBox2.Location = new Point(146, 380);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 3;
+            textBox2.TabIndex = 4;
             // 
             // deleteButton
             // 
             deleteButton.Location = new Point(378, 380);
             deleteButton.Name = "deleteButton";
             deleteButton.Size = new Size(75, 23);
-            deleteButton.TabIndex = 4;
+            deleteButton.TabIndex = 6;
             deleteButton.Text = "&Delete";
             deleteButton.UseVisualStyleBackColor = true;
             deleteButton.Click += deleteButton_Click;
+            // 
+            // nameLabel
+            // 
+            nameLabel.AutoSize = true;
+            nameLabel.Location = new Point(12, 362);
+            nameLabel.Name = "nameLabel";
+            nameLabel.Size = new Size(39, 15);
+            nameLabel.TabIndex = 1;
+            nameLabel.Text = "&Name";
+            // 
+            // phoneLabel
+            // 
+            phoneLabel.AutoSize = true;
+            phoneLabel.Location = new Point(146, 362);
+            phoneLabel.Name = "phoneLabel";
+            phoneLabel.Size = new Size(41, 15);
+            phoneLabel.TabIndex = 3;
+            phoneLabel.Text = "&Phone";
             // 
             // PersonTable
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(phoneLabel);
+            Controls.Add(nameLabel);
             Controls.Add(deleteButton);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
@@ -142,5 +164,7 @@
         private TextBox textBox1;
         private TextBox textBox2;
         private Button deleteButton;
+        private Label nameLabel;
+        private Label phoneLabel;
     }
 }
