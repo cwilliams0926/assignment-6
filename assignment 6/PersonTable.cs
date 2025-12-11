@@ -4,7 +4,7 @@ namespace assignment_6
 {
     public partial class PersonTable : Form
     {
-        private PersonContextDataSource db = new PersonContextDataSource();
+        private IPersonDataSource db = new PersonContextDataSource();
         public PersonTable()
         {
             InitializeComponent();
