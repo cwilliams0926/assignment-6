@@ -16,5 +16,10 @@ namespace assignment_6
             db.People.Load();
             personBindingSource.DataSource = db.People.Local.ToBindingList();
         }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            db.SaveChanges();
+        }
     }
 }
