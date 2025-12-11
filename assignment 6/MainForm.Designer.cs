@@ -1,6 +1,6 @@
 ﻿namespace assignment_6
 {
-    partial class PersonTable
+    partial class MainForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -177,7 +177,7 @@
             searchTextBox.TabIndex = 9;
             searchTextBox.TextChanged += textBox3_TextChanged;
             // 
-            // PersonTable
+            // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -192,7 +192,7 @@
             Controls.Add(textBox1);
             Controls.Add(saveButton);
             Controls.Add(dataGridView1);
-            Name = "PersonTable";
+            Name = "MainForm";
             Text = "Person Table";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

@@ -2,10 +2,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace assignment_6
 {
-    public partial class PersonTable : Form
+    public partial class MainForm : Form
     {
         private IPersonDataSource db = new PersonContextDataSource();
-        public PersonTable()
+        public MainForm()
         {
             InitializeComponent();
         }
