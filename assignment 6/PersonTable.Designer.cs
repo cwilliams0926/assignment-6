@@ -41,6 +41,8 @@
             nameLabel = new Label();
             phoneLabel = new Label();
             addButton = new Button();
+            searchLabel = new Label();
+            searchTextBox = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)personBindingSource).BeginInit();
             SuspendLayout();
@@ -54,7 +56,7 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nameDataGridViewTextBoxColumn, phoneDataGridViewTextBoxColumn });
             dataGridView1.DataSource = personBindingSource;
-            dataGridView1.Location = new Point(12, 12);
+            dataGridView1.Location = new Point(12, 50);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.Size = new Size(776, 309);
@@ -157,11 +159,31 @@
             addButton.UseVisualStyleBackColor = true;
             addButton.Click += addButton_Click;
             // 
+            // searchLabel
+            // 
+            searchLabel.AutoSize = true;
+            searchLabel.Location = new Point(561, 24);
+            searchLabel.Name = "searchLabel";
+            searchLabel.Size = new Size(42, 15);
+            searchLabel.TabIndex = 8;
+            searchLabel.Text = "Search";
+            searchLabel.Click += searchLabel_Click;
+            // 
+            // searchTextBox
+            // 
+            searchTextBox.Location = new Point(609, 21);
+            searchTextBox.Name = "searchTextBox";
+            searchTextBox.Size = new Size(179, 23);
+            searchTextBox.TabIndex = 9;
+            searchTextBox.TextChanged += textBox3_TextChanged;
+            // 
             // PersonTable
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(searchTextBox);
+            Controls.Add(searchLabel);
             Controls.Add(addButton);
             Controls.Add(phoneLabel);
             Controls.Add(nameLabel);
@@ -193,5 +215,7 @@
         private Label nameLabel;
         private Label phoneLabel;
         private Button addButton;
+        private Label searchLabel;
+        private TextBox searchTextBox;
     }
 }

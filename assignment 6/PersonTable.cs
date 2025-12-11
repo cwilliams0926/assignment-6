@@ -47,5 +47,17 @@ namespace assignment_6
                 }
             }
         }
+
+        private void searchLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // This should be called searchTextBox_TextChanged but I added the event handler
+        // before renaming and now I can't fix it
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
