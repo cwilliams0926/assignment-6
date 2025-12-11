@@ -4,7 +4,7 @@ namespace assignment_6
 {
     public partial class PersonTable : Form
     {
-        private PersonDbContext db = new();
+        private PersonContextDataSource db = new PersonContextDataSource();
         public PersonTable()
         {
             InitializeComponent();
@@ -12,9 +12,7 @@ namespace assignment_6
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            db.Database.EnsureCreated();
-            db.People.Load();
-            personBindingSource.DataSource = db.People.Local.ToBindingList();
+            ApplyFilter();
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -27,7 +25,7 @@ namespace assignment_6
             Person currentPerson = (Person)personBindingSource.Current;
             if (currentPerson == null)
                 return;
-            db.People.Remove(currentPerson);
+            db.Delete(currentPerson);
             db.SaveChanges();
             ApplyFilter();
         }
@@ -43,7 +41,7 @@ namespace assignment_6
                         Name = addForm.PersonName,
                         Phone = addForm.PersonPhone
                     };
-                    db.People.Add(newPerson);
+                    db.Add(newPerson);
                     db.SaveChanges();
                 }
             }
@@ -64,9 +62,7 @@ namespace assignment_6
 
         private void ApplyFilter()
         {
-            personBindingSource.DataSource = db.People.Local.Where(
-                p => p.Name.Contains(searchTextBox.Text, StringComparison.OrdinalIgnoreCase))
-                .ToList();
+            personBindingSource.DataSource = db.GetPeople(searchTextBox.Text);
         }
     }
 }

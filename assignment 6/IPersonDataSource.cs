@@ -11,5 +11,7 @@ namespace assignment_6
         IEnumerable<Person> GetPeople();
         IEnumerable<Person> GetPeople(string filter);
         void SaveChanges();
+        void Add(Person person);
+        void Delete(Person person);
     }
 }
