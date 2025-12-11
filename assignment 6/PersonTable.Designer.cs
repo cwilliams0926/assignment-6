@@ -40,18 +40,22 @@
             deleteButton = new Button();
             nameLabel = new Label();
             phoneLabel = new Label();
+            addButton = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)personBindingSource).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nameDataGridViewTextBoxColumn, phoneDataGridViewTextBoxColumn });
             dataGridView1.DataSource = personBindingSource;
             dataGridView1.Location = new Point(12, 12);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.Size = new Size(776, 309);
             dataGridView1.TabIndex = 0;
             // 
@@ -60,6 +64,7 @@
             idDataGridViewTextBoxColumn.DataPropertyName = "Id";
             idDataGridViewTextBoxColumn.HeaderText = "Id";
             idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            idDataGridViewTextBoxColumn.ReadOnly = true;
             idDataGridViewTextBoxColumn.Visible = false;
             // 
             // nameDataGridViewTextBoxColumn
@@ -67,12 +72,14 @@
             nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
             nameDataGridViewTextBoxColumn.HeaderText = "Name";
             nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            nameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // phoneDataGridViewTextBoxColumn
             // 
             phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
             phoneDataGridViewTextBoxColumn.HeaderText = "Phone";
             phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            phoneDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // personBindingSource
             // 
@@ -106,10 +113,10 @@
             // 
             // deleteButton
             // 
-            deleteButton.Location = new Point(378, 380);
+            deleteButton.Location = new Point(442, 380);
             deleteButton.Name = "deleteButton";
             deleteButton.Size = new Size(75, 23);
-            deleteButton.TabIndex = 6;
+            deleteButton.TabIndex = 7;
             deleteButton.Text = "&Delete";
             deleteButton.UseVisualStyleBackColor = true;
             deleteButton.Click += deleteButton_Click;
@@ -132,11 +139,22 @@
             phoneLabel.TabIndex = 3;
             phoneLabel.Text = "&Phone";
             // 
+            // addButton
+            // 
+            addButton.Location = new Point(361, 380);
+            addButton.Name = "addButton";
+            addButton.Size = new Size(75, 23);
+            addButton.TabIndex = 6;
+            addButton.Text = "&Add";
+            addButton.UseVisualStyleBackColor = true;
+            addButton.Click += addButton_Click;
+            // 
             // PersonTable
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(addButton);
             Controls.Add(phoneLabel);
             Controls.Add(nameLabel);
             Controls.Add(deleteButton);
@@ -166,5 +184,6 @@
         private Button deleteButton;
         private Label nameLabel;
         private Label phoneLabel;
+        private Button addButton;
     }
 }

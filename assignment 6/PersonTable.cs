@@ -30,5 +30,10 @@ namespace assignment_6
             db.People.Remove(currentPerson);
             db.SaveChanges();
         }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
