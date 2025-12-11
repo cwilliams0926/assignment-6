@@ -4,9 +4,10 @@ namespace assignment_6
 {
     public partial class MainForm : Form
     {
-        private IPersonDataSource db = new PersonContextDataSource();
-        public MainForm()
+        private IPersonDataSource db;
+        public MainForm(IPersonDataSource personDataSource)
         {
+            db = personDataSource;
             InitializeComponent();
         }
 
