@@ -7,7 +7,7 @@ namespace assignment_6
         private IPersonDataSource db;
         public MainForm(IPersonDataSource personDataSource)
         {
-            db = personDataSource;
+            db = personDataSource; // Dependency Injection
             InitializeComponent();
         }
 
@@ -49,6 +49,7 @@ namespace assignment_6
             ApplyFilter();
         }
 
+        // Accident
         private void searchLabel_Click(object sender, EventArgs e)
         {
 

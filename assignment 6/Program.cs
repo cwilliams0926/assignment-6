@@ -8,6 +8,7 @@ namespace assignment_6
         [STAThread]
         static void Main()
         {
+            // Can change these two lines to switch data sources easily
             // IPersonDataSource personDataSource = new PersonContextDataSource();
             IPersonDataSource personDataSource = new PersonListDataSource();
             // To customize application configuration such as set high DPI settings or default font,
