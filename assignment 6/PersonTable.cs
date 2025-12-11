@@ -21,5 +21,14 @@ namespace assignment_6
         {
             db.SaveChanges();
         }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            Person currentPerson = (Person)personBindingSource.Current;
+            if (currentPerson == null)
+                return;
+            db.People.Remove(currentPerson);
+            db.SaveChanges();
+        }
     }
 }
