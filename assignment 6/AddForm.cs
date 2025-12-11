@@ -12,6 +12,8 @@ namespace assignment_6
 {
     public partial class AddForm : Form
     {
+        public string PersonName => nameTextBox.Text;
+        public string PersonPhone => phoneTextBox.Text;
         public AddForm()
         {
             InitializeComponent();
@@ -19,7 +21,14 @@ namespace assignment_6
 
         private void okButton_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
 
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }
