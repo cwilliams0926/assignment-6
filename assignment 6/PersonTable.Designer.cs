@@ -49,6 +49,7 @@
             // 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nameDataGridViewTextBoxColumn, phoneDataGridViewTextBoxColumn });
@@ -87,6 +88,7 @@
             // 
             // saveButton
             // 
+            saveButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             saveButton.Location = new Point(280, 380);
             saveButton.Name = "saveButton";
             saveButton.Size = new Size(75, 23);
@@ -97,6 +99,7 @@
             // 
             // textBox1
             // 
+            textBox1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             textBox1.DataBindings.Add(new Binding("Text", personBindingSource, "Name", true));
             textBox1.Location = new Point(12, 380);
             textBox1.Name = "textBox1";
@@ -105,6 +108,7 @@
             // 
             // textBox2
             // 
+            textBox2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             textBox2.DataBindings.Add(new Binding("Text", personBindingSource, "Phone", true));
             textBox2.Location = new Point(146, 380);
             textBox2.Name = "textBox2";
@@ -113,6 +117,7 @@
             // 
             // deleteButton
             // 
+            deleteButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             deleteButton.Location = new Point(442, 380);
             deleteButton.Name = "deleteButton";
             deleteButton.Size = new Size(75, 23);
@@ -123,6 +128,7 @@
             // 
             // nameLabel
             // 
+            nameLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             nameLabel.AutoSize = true;
             nameLabel.Location = new Point(12, 362);
             nameLabel.Name = "nameLabel";
@@ -132,6 +138,7 @@
             // 
             // phoneLabel
             // 
+            phoneLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             phoneLabel.AutoSize = true;
             phoneLabel.Location = new Point(146, 362);
             phoneLabel.Name = "phoneLabel";
@@ -141,6 +148,7 @@
             // 
             // addButton
             // 
+            addButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             addButton.Location = new Point(361, 380);
             addButton.Name = "addButton";
             addButton.Size = new Size(75, 23);

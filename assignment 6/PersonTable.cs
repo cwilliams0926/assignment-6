@@ -33,7 +33,19 @@ namespace assignment_6
 
         private void addButton_Click(object sender, EventArgs e)
         {
-
+            using (var addForm = new AddForm())
+            {
+                if (addForm.ShowDialog() == DialogResult.OK)
+                {
+                    var newPerson = new Person
+                    {
+                        Name = addForm.PersonName,
+                        Phone = addForm.PersonPhone
+                    };
+                    db.People.Add(newPerson);
+                    db.SaveChanges();
+                }
+            }
         }
     }
 }
