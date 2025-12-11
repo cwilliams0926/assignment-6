@@ -29,6 +29,7 @@ namespace assignment_6
                 return;
             db.People.Remove(currentPerson);
             db.SaveChanges();
+            ApplyFilter();
         }
 
         private void addButton_Click(object sender, EventArgs e)
@@ -46,6 +47,7 @@ namespace assignment_6
                     db.SaveChanges();
                 }
             }
+            ApplyFilter();
         }
 
         private void searchLabel_Click(object sender, EventArgs e)
@@ -57,7 +59,14 @@ namespace assignment_6
         // before renaming and now I can't fix it
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
+            ApplyFilter();
+        }
 
+        private void ApplyFilter()
+        {
+            personBindingSource.DataSource = db.People.Local.Where(
+                p => p.Name.Contains(searchTextBox.Text, StringComparison.OrdinalIgnoreCase))
+                .ToList();
         }
     }
 }
